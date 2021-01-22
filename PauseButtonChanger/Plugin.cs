@@ -1,4 +1,5 @@
 ﻿using IPA;
+using SiraUtil.Zenject;
 using IPALogger = IPA.Logging.Logger;
 
 namespace PauseButtonChanger
@@ -7,14 +8,15 @@ namespace PauseButtonChanger
     [Plugin(RuntimeOptions.DynamicInit)]
     public class Plugin
     {
-        internal static Plugin Instance { get; private set; }
+        //internal static Plugin Instance { get; private set; }
         internal static IPALogger Log { get; private set; }
 
         [Init]
-        public void Init(IPALogger logger)
+        public void Init(Zenjector zenjector, IPALogger logger)
         {
-            Instance = this;
+            //Instance = this;
             Log = logger;
+            zenjector.OnApp<Main.AppInstaller>();
         }
 
         #region BSIPA Config

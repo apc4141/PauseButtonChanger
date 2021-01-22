@@ -7,10 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PauseButtonChanger
+namespace PauseButtonChanger.Main
 {
     public class PauseButtonChangerController : MonoBehaviour
     {
         public static PauseButtonChangerController Instance { get; private set; }
+
+        public PauseButtonChangerController()
+        { 
+            
+        }
     }
 }
